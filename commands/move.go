@@ -3,8 +3,8 @@ package commands
 import (
 	"errors"
 
-	"github.com/emersion/go-imap"
-	"github.com/emersion/go-imap/utf7"
+	"github.com/se1phine/go-imap"
+	"github.com/se1phine/go-imap/utf7"
 )
 
 // A MOVE command.
