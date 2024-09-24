@@ -1,6 +1,6 @@
 Forked from [emersion/go-imap](https://github.com/emersion/go-imap)@v1 to add some features for 163.com mail server and Aliyun mail server.
 - Add ID command
-- Add Client Option to not use `CHARSET` in `FETCH` command
+- Add Client Option to not use `CHARSET` in `SEARCH` command
 
 ---
 
