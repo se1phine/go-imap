@@ -32,8 +32,13 @@ func (cmd *Command) WriteTo(w *Writer) error {
 		tag = "*"
 	}
 
-	fields := []interface{}{RawString(tag), RawString(cmd.Name)}
-	fields = append(fields, cmd.Arguments...)
+	var fields []interface{}
+	if cmd.Name == "ID" {
+		fields = []interface{}{RawString(tag), RawString(cmd.Name), RawString(cmd.Arguments[0].(string))}
+	} else {
+		fields = []interface{}{RawString(tag), RawString(cmd.Name)}
+		fields = append(fields, cmd.Arguments...)
+	}
 	return w.writeLine(fields...)
 }
 

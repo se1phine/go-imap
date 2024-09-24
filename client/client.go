@@ -89,6 +89,8 @@ type Client struct {
 	// other charsets are optional.
 	utf8SearchUnsupported bool
 
+	NoSearchCharset bool
+
 	// A channel to which unilateral updates from the server will be sent. An
 	// update can be one of: *StatusUpdate, *MailboxUpdate, *MessageUpdate,
 	// *ExpungeUpdate. Note that blocking this channel blocks the whole client,

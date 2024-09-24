@@ -21,6 +21,17 @@ func (c *Client) ensureAuthenticated() error {
 	return nil
 }
 
+func (c *Client) ID(id string) ([]string, error) {
+	cmd := &commands.ID{IDString: id}
+	res := new(responses.ID)
+
+	if status, err := c.Execute(cmd, res); err != nil {
+		return nil, err
+	} else {
+		return res.ResStr, status.Err()
+	}
+}
+
 // Select selects a mailbox so that messages in the mailbox can be accessed. Any
 // currently selected mailbox is deselected before attempting the new selection.
 // Even if the readOnly parameter is set to false, the server can decide to open

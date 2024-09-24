@@ -179,3 +179,29 @@ func ParseNamedResp(resp Resp) (name string, fields []interface{}, ok bool) {
 	}
 	return strings.ToUpper(name), data.Fields[1:], true
 }
+
+//func ParseIDResp(resp Resp) (name string, respStr string, ok bool) {
+//	// s3Ng ID ("name" "jizhi_mail_migrator" "version" "unknown" "vendor" "bizcn.com")
+//	data, ok := resp.(*DataResp)
+//	if !ok || len(data.Fields) == 0 {
+//		return
+//	}
+//
+//	// * ID ("name" "AliyunImap" "vendor" "Aliyun, Inc." "url" "http://www.aliyun.com")
+//	if len(data.Fields) > 1 {
+//		name, ok := data.Fields[1].(string)
+//		if ok {
+//			if _, err := ParseNumber(data.Fields[0]); err == nil {
+//				fields := []interface{}{data.Fields[0]}
+//				fields = append(fields, data.Fields[2:]...)
+//				return strings.ToUpper(name), strings.Join(fields.(string[]), ""), true
+//			}
+//		}
+//	}
+//
+//	name, ok = data.Fields[0].(string)
+//	if !ok {
+//		return
+//	}
+//	return strings.ToUpper(name), data.Fields[1:], true
+//}
