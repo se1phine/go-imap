@@ -15,6 +15,10 @@ func (r *ID) Handle(resp imap.Resp) error {
 	} else if len(fields) < 1 {
 		return errNotEnoughFields
 	}
+
+	if fields[0] == nil {
+		return nil
+	}
 	res := fields[0].([]interface{})
 	var resStrSlices []string
 	for i := 0; i < len(res); i++ {
